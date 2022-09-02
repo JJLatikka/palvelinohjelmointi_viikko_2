@@ -1,0 +1,17 @@
+
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <title>Comparison</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <style>
+      body {background-color: #B2B2B2;}
+    </style>
+  </head>
+  <body>
+  	<div th:if="${age} &gt; 17">
+  	  <span th:text="'Tervetuloa, ' + ${name} + '!'">
+  	</div>
+  	<div th:if="${age} &lt; 18">Tervemenoa!</div>
+  </body>
+</html>

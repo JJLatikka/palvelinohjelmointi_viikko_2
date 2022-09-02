@@ -1,0 +1,34 @@
+
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <title>Index</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <style>
+      body {background-color: #B2B2B2;}
+      input {background-color: #C4C4C4;}
+    </style>
+  </head>
+  <body>
+    <h2>My friends</h2>
+  	<div>
+      <ul th:each="f : ${friends}">
+        <li th:text="${f}"></li>
+      </ul>
+    </div>
+    <h2>Add new friend to list</h2>
+    <form>
+      <table>
+    	<tr>Name: <input type="text" id="name" size="12"/></tr><br><br>
+      	<tr><input type="button" value="Submit" onclick="addFriend()"/></tr>
+      </table>
+    </form>
+  </body>
+  <script type="text/javascript">
+    function addFriend() {
+      let e = document.getElementById("name");
+      const c = e.value.split(" ").join("+"); e.value = "";
+      window.location.href = "http://localhost:8080/index?friend=" + c;
+    }
+  </script>
+</html>
